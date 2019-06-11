@@ -8,11 +8,14 @@ File.read('./.ruby-version')
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'dotenv-rails', '~> 2.7.2'
 gem 'jbuilder', '~> 2.5'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 6.0.0.rc1'
 gem 'sass-rails', '~> 5'
+gem 'sentry-raven', '~> 2.9.0'
+gem 'sidekiq'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 4.0'
 
@@ -38,6 +41,7 @@ end
 group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner', '~> 1.7'
+  gem 'rspec_junit_formatter', '~> 0.4.1'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'simplecov', '~> 0.16.1', require: false
 end

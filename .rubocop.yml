@@ -12,6 +12,7 @@ AllCops:
     - 'config/environments/*.rb'
     - 'bin/*'
     - 'lib/tasks/auto_annotate_models.rake'
+    - 'node_modules/**/*'
 
 Rails:
   Enabled: true
