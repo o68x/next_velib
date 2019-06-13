@@ -3,7 +3,56 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .searchbar {
   background-color: wheat;
+  padding: 40px;
 }
+
+.searchbox {
+  display: inline-block;
+  width: 66%;
+  border-radius: 3px;
+  padding: 12px 55px 12px 12px;
+  position: relative;
+  background: #fff;
+  border: 1px solid #ddd;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  &.hovered,
+  &:hover,
+  &:active {
+    border: 1px solid #aaa;
+  }
+}
+
+.searchbox input[type=text] {
+  border: none;
+  box-shadow: none;
+  display: inline-block;
+  padding: 0;
+  background: transparent;
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: none;
+  }
+}
+.searchbox input[type=submit] {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  color: #aaa;
+  border-radius: 3px;
+  font-size: 21px;
+  padding: 5px 10px 1px;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  &:hover {
+    color: #fff;
+    background-color: #8FBE00;
+  }
+}
+
 .main {
   background-color: seashell;
 }

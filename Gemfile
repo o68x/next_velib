@@ -9,7 +9,8 @@ File.read('./.ruby-version')
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'dotenv-rails', '~> 2.7.2'
-gem 'geocoder'
+gem 'geocoder', '~> 1.5', '>= 1.5.1'
+gem 'httparty', '~> 0.17.0'
 gem 'jbuilder', '~> 2.5'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'

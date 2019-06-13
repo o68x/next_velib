@@ -3,6 +3,6 @@
 class HomeController < ApplicationController
   def index
     @search = params[:q]
-    @locations = helpers.select_location(@search)
+    @location = helpers.locate(@search) unless @search.nil?
   end
 end

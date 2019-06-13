@@ -1,19 +1,16 @@
 <div class="searchbar">
 <%= form_tag(root_path, method: "get", class: "searchbox") do %>
-  <%= label_tag(:q, "Search for:") %>
+  <%= label_tag(:q, "") %>
   <%= text_field_tag(:q) %>
   <%= submit_tag("Search") %>
 <% end %>
-<%= @search %>
 </div>
 <div class="main">
-  <ul>
-    <% @locations.each do |location| %>
-    <li>
-      <%= location["properties"]["label"] %>
-      <%= location["geometry"]["coordinates"] %>
-    </li>
+  <code>
+    <%= @search %>
+    <% unless @location.nil? %>
+    <%= @location[:label] %>
+    <%= @location[:coordinates] %>
     <% end %>
-  </ul>
-  go for <%= @locations[0]["geometry"]["coordinates"] %>
+  </code>
 </div>
