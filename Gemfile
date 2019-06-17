@@ -20,6 +20,7 @@ gem 'sass-rails', '~> 5'
 gem 'sentry-raven', '~> 2.9.0'
 gem 'sidekiq'
 gem 'turbolinks', '~> 5'
+gem 'typhoeus', '~> 1.3', '>= 1.3.1'
 gem 'webpacker', '~> 4.0'
 
 group :development, :test do

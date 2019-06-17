@@ -4,7 +4,7 @@ require 'httparty'
 
 module HomeHelper
   def locate(search)
-    # ! # TODO: rescue that error somewhere
+    # ! # FIXME: rescue that error somewhere
     raise ArgumentError, 'You must search for something' if search.blank?
 
     results = Geocoder.search(search)[0].data["features"]
@@ -17,13 +17,28 @@ module HomeHelper
     }
   end
 
+  class CityBikes
+    # get the whole directory of stations
+    # use it to fill the whole database
+    include HTTParty
+    base_uri "http://api.citybik.es/v2/networks"
+
+    def stations
+      self.class.get("/velib")
+    end
+  end
+
   class VelibMetropole
+    # get the nearest stations with params from geocoder
+    # use it to get the latest availability if the
+    # ? # TODO: db has not been refreshed lately (cache?)
     include HTTParty
     base_uri "https://www.velib-metropole.fr"
 
     def initialize(coordinates)
       long   = coordinates[0]
       lat    = coordinates[1]
+      # this is about 5 km around the given location
       radius = 0.005
 
       @options = {
