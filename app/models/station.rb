@@ -15,7 +15,8 @@
 #
 # Indexes
 #
-#  index_stations_on_sid  (sid)
+#  index_stations_on_latitude_and_longitude  (latitude,longitude)
+#  index_stations_on_sid                     (sid)
 #
 
 # * # REF: http://api.citybik.es/v2/networks/velib
@@ -49,16 +50,13 @@
 # }
 
 class Station < ApplicationRecord
-  def check_cache
-    # check if db is fresh enough
-    Rails.cache.fetch([cache_key, __method__]) do
-    end
-  end
+  reverse_geocoded_by :latitude, :longitude
 
   def self.update_all_stations
     @stations = self::CityBikes.new.stations["network"]["stations"]
 
     @stations.each do |s|
+      puts s["name"]
       station_data = find_or_initialize_by(sid: s["id"]) do |station|
         station.name = s["name"]
         station.latitude = s["latitude"].to_f
@@ -78,7 +76,6 @@ class Station < ApplicationRecord
     base_uri "http://api.citybik.es/v2/networks"
 
     def stations
-      puts 'been here'
       # ! # TODO: Redis cache goes here, I think
       self.class.get("/velib")
     end

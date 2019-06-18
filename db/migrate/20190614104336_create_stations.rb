@@ -13,5 +13,7 @@ class CreateStations < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+    # REF: https://github.com/alexreisner/geocoder#performance-and-optimization
+    add_index :stations, [:latitude, :longitude]
   end
 end

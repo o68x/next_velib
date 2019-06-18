@@ -15,7 +15,8 @@
 #
 # Indexes
 #
-#  index_stations_on_sid  (sid)
+#  index_stations_on_latitude_and_longitude  (latitude,longitude)
+#  index_stations_on_sid                     (sid)
 #
 
 FactoryBot.define do

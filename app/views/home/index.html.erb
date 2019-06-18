@@ -13,4 +13,13 @@
     <%= @location[:coordinates] %>
     <% end %>
   </code>
+  <ul>
+  <% @stations.each do |station| %>
+    <li>
+      <%= station.name %>
+      <%= station.free_bikes %>
+      <%= station.distance %>
+    </li>
+  <% end %>
+  </ul>
 </div>

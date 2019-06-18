@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2019_06_14_104336) do
     t.integer "free_bikes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["latitude", "longitude"], name: "index_stations_on_latitude_and_longitude"
     t.index ["sid"], name: "index_stations_on_sid"
   end
 

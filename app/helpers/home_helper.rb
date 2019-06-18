@@ -3,21 +3,26 @@
 require 'httparty'
 
 module HomeHelper
-  def locate(search)
+  def locate_search(search)
     # ! # FIXME: rescue that error somewhere
     raise ArgumentError, 'You must search for something' if search.blank?
 
     results = Geocoder.search(search)[0].data["features"]
-    # binding.pry
     paris_only = results.select{ |city| city["properties"]["city"] == "Paris" }[0]
     {
       label: paris_only["properties"]["label"],
-      coordinates: paris_only["geometry"]["coordinates"],
-      results: VelibMetropole.new(paris_only["geometry"]["coordinates"])
+      coordinates: {
+        lng: paris_only["geometry"]["coordinates"][0],
+        lat: paris_only["geometry"]["coordinates"][1],
+      }
     }
   end
 
-  def fetch_stations; end
+  def locate_results(location)
+    # location is array with longitude and latitude
+    Station.near([location[:lat], location[:lng]], 1, units: :km)
+           .where.not(free_bikes: 0).limit(5)
+  end
 
   class CityBikes
     # get the whole directory of stations
