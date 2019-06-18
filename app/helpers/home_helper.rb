@@ -17,6 +17,8 @@ module HomeHelper
     }
   end
 
+  def fetch_stations; end
+
   class CityBikes
     # get the whole directory of stations
     # use it to fill the whole database

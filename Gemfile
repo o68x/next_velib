@@ -10,6 +10,7 @@ File.read('./.ruby-version')
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'dotenv-rails', '~> 2.7.2'
 gem 'geocoder', '~> 1.5', '>= 1.5.1'
+gem 'hiredis'
 gem 'httparty', '~> 0.17.0'
 gem 'jbuilder', '~> 2.5'
 gem 'pg', '>= 0.18', '< 2.0'
@@ -20,7 +21,6 @@ gem 'sass-rails', '~> 5'
 gem 'sentry-raven', '~> 2.9.0'
 gem 'sidekiq'
 gem 'turbolinks', '~> 5'
-gem 'typhoeus', '~> 1.3', '>= 1.3.1'
 gem 'webpacker', '~> 4.0'
 
 group :development, :test do
