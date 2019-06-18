@@ -23,6 +23,11 @@ jobs:
     steps:
       - checkout
 
+      # Update bundler 2.0.1
+      - run:
+          name: update bundler version
+          command: gem install bundler:2.0.1
+
       # Download and cache dependencies
       - restore_cache:
           keys:
