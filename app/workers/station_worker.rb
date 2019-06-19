@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# require 'sidekiq-scheduler'
-
 class StationWorker
   include Sidekiq::Worker
 

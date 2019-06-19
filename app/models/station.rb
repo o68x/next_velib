@@ -52,6 +52,22 @@
 class Station < ApplicationRecord
   reverse_geocoded_by :latitude, :longitude
 
+  validates :sid, presence: true, uniqueness: true
+  validates :latitude,
+            numericality: {
+              greater_than: 48.75,
+              less_than: 49.0
+            }
+  validates :longitude,
+            numericality: {
+              greater_than: 2.15,
+              less_than: 2.55
+            }
+  validates :name, presence: true
+  validates :free_bikes,
+            presence: true,
+            numericality: { only_integer: true }
+
   def self.update_all_stations
     @stations = self::CityBikes.new.stations["network"]["stations"]
 

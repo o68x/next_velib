@@ -13,5 +13,17 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe HomeHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#locate_search' do
+    xit 'should return a valid hash with a valid search'
+    xit 'should return nil with a silly search'
+    xit 'should return nil with an empty search'
+  end
+
+  describe '#locate_results' do
+    xit 'should return an array of 5 stations'
+  end
+
+  describe '#walking_distance' do
+    xit 'should convert km to walking distance'
+  end
 end

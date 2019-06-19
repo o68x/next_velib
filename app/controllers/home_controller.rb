@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   before_action :check_stations_cache
 
   def index
-    @search = params[:q]
+    @search = params[:q] || '4 rue Chappe'
     # returns hash with :label and :coordinates
     @location = helpers.locate_search(@search) unless @search.nil?
     @stations = helpers.locate_results(@location[:coordinates]) unless @location.nil?
@@ -12,7 +12,7 @@ class HomeController < ApplicationController
 
   def check_stations_cache
     # checks how old the db is, refreshes it if needed
-    Rails.cache.fetch(:stations, expires_in: 1.minute) do
+    Rails.cache.fetch(:stations, expires_in: 5.minutes) do
       StationWorker.perform_async
     end
   end

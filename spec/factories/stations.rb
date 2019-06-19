@@ -21,5 +21,10 @@
 
 FactoryBot.define do
   factory :station do
+    sid { Faker::Internet.password(32) }
+    name { "#{Faker::Ancient.primordial} - #{Faker::Ancient.hero}" }
+    latitude { 48.881991 }
+    longitude { 2.371773 }
+    free_bikes { Random.rand(1..8) }
   end
 end

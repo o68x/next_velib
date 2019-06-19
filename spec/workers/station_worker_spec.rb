@@ -2,5 +2,5 @@
 
 require 'rails_helper'
 RSpec.describe StationWorker, type: :worker do
-  pending "add some examples to (or delete) #{__FILE__}"
+  xit 'updates db async with sidekiq'
 end

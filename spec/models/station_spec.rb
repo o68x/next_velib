@@ -22,5 +22,21 @@
 require 'rails_helper'
 
 RSpec.describe Station, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "has a valid factory" do
+    expect(create(:station)).to be_valid
+  end
+
+  it { is_expected.to validate_presence_of(:sid) }
+  it { is_expected.to validate_presence_of(:name) }
+  it { is_expected.to validate_numericality_of(:latitude) }
+  it { is_expected.to validate_numericality_of(:longitude) }
+  it { is_expected.to validate_numericality_of(:free_bikes) }
+
+  describe '#update_all_stations' do
+    xit "should create or update database"
+  end
+
+  describe 'CityBikes HTTParty #get' do
+    xit "should return a valid HTTParty object (json)"
+  end
 end
