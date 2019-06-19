@@ -6,20 +6,26 @@
 <% end %>
 </div>
 <div class="main">
-  <code>
-    <%= @search %>
-    <% unless @location.nil? %>
-    <%= @location[:label] %>
-    <%= @location[:coordinates] %>
-    <% end %>
-  </code>
-  <ul>
-  <% @stations.each do |station| %>
-    <li>
-      <%= station.name %>
-      <%= station.free_bikes %>
-      <%= station.distance %>
-    </li>
-  <% end %>
-  </ul>
+  <div class="searchresult">
+    <code>
+      <% unless @location.nil? %>
+      <%= @location[:label] %>
+      <%= @location[:coordinates] %>
+      <% end %>
+    </code>
+  </div>
+
+  <div class="stations">
+    <ul>
+      <% unless @stations.nil? %>
+      <% @stations.each do |station| %>
+      <li>
+        Station <%= station.name %> :
+        <%= station.free_bikes %> vélibs à
+        <%= walking_distance(station.distance) %> minutes
+      </li>
+      <% end %>
+      <% end %>
+    </ul>
+  </div>
 </div>

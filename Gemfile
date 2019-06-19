@@ -20,6 +20,7 @@ gem 'redis-rails'
 gem 'sass-rails', '~> 5'
 gem 'sentry-raven', '~> 2.9.0'
 gem 'sidekiq'
+gem 'sidekiq-scheduler'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 4.0'
 
@@ -45,6 +46,7 @@ end
 group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner', '~> 1.7'
+  gem 'rspec-sidekiq'
   gem 'rspec_junit_formatter', '~> 0.4.1'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'simplecov', '~> 0.16.1', require: false

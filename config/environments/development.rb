@@ -22,7 +22,7 @@ Rails.application.configure do
       'Cache-Control' => "public, max-age=#{2.days.to_i}"
     }
   else
-    # ! # REF: https://opensource.com/article/18/4/ruby-rails-redis
+    # * # SEE: https://opensource.com/article/18/4/ruby-rails-redis
     config.action_controller.perform_caching = true
 
     config.cache_store = :redis_cache_store, {

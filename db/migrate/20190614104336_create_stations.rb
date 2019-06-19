@@ -3,8 +3,6 @@
 class CreateStations < ActiveRecord::Migration[6.0]
   def change
     create_table :stations do |t|
-      # * # TODO: Fill this table with data from API call
-      # * # TODO: Update on interval (sidekik scheduler)
       t.string  :sid, index: true
       t.string  :name
       t.float   :latitude
@@ -13,7 +11,7 @@ class CreateStations < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
-    # REF: https://github.com/alexreisner/geocoder#performance-and-optimization
+    # * # SEE: https://github.com/alexreisner/geocoder#performance-and-optimization
     add_index :stations, [:latitude, :longitude]
   end
 end

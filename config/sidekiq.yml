@@ -5,4 +5,10 @@ production:
   :concurrency: 2
 :queues:
   - default
-  - mailers
+
+:schedule:
+  StationWorker:
+    class: StationWorker
+    every: ['5m', first_in: '0s']
+    queue: default
+    description: 'Update stations db'

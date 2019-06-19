@@ -19,7 +19,7 @@
 #  index_stations_on_sid                     (sid)
 #
 
-# * # REF: http://api.citybik.es/v2/networks/velib
+# * # SEE: http://api.citybik.es/v2/networks/velib
 # {
 #   "network": {
 #     ...
@@ -76,7 +76,6 @@ class Station < ApplicationRecord
     base_uri "http://api.citybik.es/v2/networks"
 
     def stations
-      # ! # TODO: Redis cache goes here, I think
       self.class.get("/velib")
     end
   end
