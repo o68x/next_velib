@@ -35,7 +35,8 @@ code {
 
 .main {
   grid-area: main;
-  background-color: #68B0E2;
+  // background-color: #68B0E2;
+  background-image: linear-gradient(120deg, #2469A3 0%, #68B0E2 100%);
 }
 
 .station {
