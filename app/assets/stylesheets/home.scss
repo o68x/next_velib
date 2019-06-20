@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 html {
   box-sizing: border-box;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'B612', sans-serif;
+  color: white;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -23,19 +24,27 @@ html {
 
 .searchbar {
   grid-area: header;
-  background-color: wheat;
+  background-color: #2469A3;
   padding: 40px;
+}
+
+code {
+  color: #CAE1B6;
+  padding: 2px;
 }
 
 .main {
   grid-area: main;
-  background-color: seashell;
+  background-color: #68B0E2;
 }
 
 .station {
   display: inline-block;
   width: 100%;
-  border-bottom: 2px solid wheat;
+  padding: 5px;
+  &:not(:last-of-type) {
+   border-bottom: 2px solid #2469A3;
+  }
   .bikes {
     float: left;
     padding-top: 1%;
@@ -47,18 +56,23 @@ html {
     width: 20%;
     display: block;
     .count {
+      color: #CAE1B6;
+      font-weight: bold;
       font-size: 1.8rem;
+      padding-top: 15px;
     }
   }
   .name {
     font-size: 1.2rem;
-    text-decoration: none;
+    //text-decoration: none;
+    color: white;
   }
   .station-info {
-    border-left: 2px solid wheat;
+    border-left: 2px solid #2469A3;
     max-width: 75%;
     padding-left: 5%;
     float: left;
+    margin-bottom: 5px;
   }
   .station-distance {
     font-size: 1em;
@@ -69,6 +83,27 @@ html {
     }
   }
 }
+
+.message {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+  padding: 4rem;
+  color: #CAE1B6;
+}
+.hide {
+  display: none;
+}
+
 .footer {
   grid-area: footer;
+  background-color: #2469A3;
+  display: inline-flex;
+  justify-content: space-between;
+  code {
+    padding: 2px 10px;
+    a {
+      color: white;
+    }
+  }
 }

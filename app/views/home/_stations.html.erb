@@ -3,12 +3,12 @@
     <div class="count">
       <%= station.free_bikes %>
     </div>
-    vélibs
+    vélib<%= "s" if station.free_bikes > 1 %>
     <div class="clearbox"></div>
   </div>
   <div class="station-info">
     <a class="name" href="<%= map_link(station) %>" target="_blank">
-      <h3><%= station.name %></h3><i class="la la-external-link-square"></i>
+      <h3><%= station.name %> <i class="la la-arrow-circle-right"></i></h3>
     </a>
     <p class="station-distance"><img src="https://img.icons8.com/color/48/000000/walking.png"> <%= walking_distance(station.distance) %> minutes</p>
     <div class="clearbox"></div>

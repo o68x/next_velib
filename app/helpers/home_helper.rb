@@ -3,7 +3,7 @@
 module HomeHelper
   def locate_search(search)
     results = Geocoder.search(search)[0].data["features"]
-    paris_only = results.select{ |city| city["properties"]["city"] == "Paris" }[0]
+    paris_only = results.select{ |city| city["properties"]["context"] =~ /Île-de-France/ }[0]
     return nil if paris_only.blank?
 
     {
@@ -14,11 +14,19 @@ module HomeHelper
         lat: paris_only["geometry"]["coordinates"][1],
       }
     }
+  rescue Timeout::Error => e
+    {
+      label: e,
+      coordinates: {
+        lgn: 2.341701,
+        lat: 48.884322
+      }
+    }
   end
 
   def locate_results(location)
     # location is array with longitude and latitude
-    Station.near([location[:lat], location[:lng]], 2, units: :km)
+    Station.near([location[:lat], location[:lng]], 10, units: :km)
            .where.not(free_bikes: 0).limit(5)
   end
 

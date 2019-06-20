@@ -6,8 +6,12 @@ class HomeController < ApplicationController
   def index
     @search = params[:q] || '4 rue Chappe'
     # returns hash with :label and :coordinates
-    @location = helpers.locate_search(@search) unless @search.nil?
-    @stations = helpers.locate_results(@location[:coordinates]) unless @location.nil?
+    return if @search.blank?
+
+    @location = helpers.locate_search(@search)
+    return if @location.blank?
+
+    @stations = helpers.locate_results(@location[:coordinates])
   end
 
   def check_stations_cache

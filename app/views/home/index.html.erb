@@ -1,7 +1,7 @@
 <div class="searchbar">
   <%= form_tag(root_path, method: "get", class: "searchbox") do %>
   <%= label_tag(:q, "") %>
-  <%= text_field_tag :q, nil, placeholder: "rechercher" %>
+  <%= text_field_tag :q, nil, placeholder: "Rechercher une station vélib" %>
   <%= button_tag type: 'submit' do %>
   <img src="https://img.icons8.com/dusk/64/000000/search.png">
   <% end %>
@@ -16,11 +16,14 @@
       <% end %>
     </code>
   </div>
-
+  <div class="message<%= @location.nil? ? " show" : " hide" %>">
+    Don't know what to do with <%= @search.present? ? @search : 'nothing' %>
+  </div>
   <div class="stations">
     <%= render partial: 'stations', collection: @stations, as: 'station' %>
   </div>
 </div>
 <div class="footer">
-  This would be a footer.
+  <code>Made with Rails 6 for THP Next, june 2019</code>
+  <code><a href="https://github.com/ocardinaux/next_velib">ocardinaux</a></code>
 </div>
