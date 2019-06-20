@@ -1,58 +1,74 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html {
+  box-sizing: border-box;
+  font-family: 'Roboto Slab', serif;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.container {
+  display: grid;
+  height: calc(100vh - 20px);
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  justify-items: stretch;
+  align-items: stretch;
+  grid-template-areas: "header" "main" "footer";
+}
+
 .searchbar {
+  grid-area: header;
   background-color: wheat;
   padding: 40px;
 }
 
-.searchbox {
-  display: inline-block;
-  width: 66%;
-  border-radius: 3px;
-  padding: 12px 55px 12px 12px;
-  position: relative;
-  background: #fff;
-  border: 1px solid #ddd;
-  -webkit-transition: all 200ms ease-in-out;
-  -moz-transition: all 200ms ease-in-out;
-  transition: all 200ms ease-in-out;
-  &.hovered,
-  &:hover,
-  &:active {
-    border: 1px solid #aaa;
-  }
-}
-
-.searchbox input[type=text] {
-  border: none;
-  box-shadow: none;
-  display: inline-block;
-  padding: 0;
-  background: transparent;
-  &:hover,
-  &:focus,
-  &:active {
-    box-shadow: none;
-  }
-}
-.searchbox input[type=submit] {
-  position: absolute;
-  right: 3px;
-  top: 3px;
-  color: #aaa;
-  border-radius: 3px;
-  font-size: 21px;
-  padding: 5px 10px 1px;
-  -webkit-transition: all 200ms ease-in-out;
-  -moz-transition: all 200ms ease-in-out;
-  transition: all 200ms ease-in-out;
-  &:hover {
-    color: #fff;
-    background-color: #8FBE00;
-  }
-}
-
 .main {
+  grid-area: main;
   background-color: seashell;
+}
+
+.station {
+  display: inline-block;
+  width: 100%;
+  border-bottom: 2px solid wheat;
+  .bikes {
+    float: left;
+    padding-top: 1%;
+    margin: 0;
+    max-width: 23%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    width: 20%;
+    display: block;
+    .count {
+      font-size: 1.8rem;
+    }
+  }
+  .name {
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+  .station-info {
+    border-left: 2px solid wheat;
+    max-width: 75%;
+    padding-left: 5%;
+    float: left;
+  }
+  .station-distance {
+    font-size: 1em;
+    align-self: center;
+    img {
+      width: 32px;
+      align-self: center;
+    }
+  }
+}
+.footer {
+  grid-area: footer;
 }

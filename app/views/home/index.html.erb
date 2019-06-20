@@ -1,9 +1,11 @@
 <div class="searchbar">
-<%= form_tag(root_path, method: "get", class: "searchbox") do %>
+  <%= form_tag(root_path, method: "get", class: "searchbox") do %>
   <%= label_tag(:q, "") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
-<% end %>
+  <%= text_field_tag :q, nil, placeholder: "rechercher" %>
+  <%= button_tag type: 'submit' do %>
+  <img src="https://img.icons8.com/dusk/64/000000/search.png">
+  <% end %>
+  <% end %>
 </div>
 <div class="main">
   <div class="searchresult">
@@ -16,16 +18,9 @@
   </div>
 
   <div class="stations">
-    <ul>
-      <% unless @stations.nil? %>
-      <% @stations.each do |station| %>
-      <li>
-        Station <%= station.name %> :
-        <%= station.free_bikes %> vélibs à
-        <%= walking_distance(station.distance) %> minutes
-      </li>
-      <% end %>
-      <% end %>
-    </ul>
+    <%= render partial: 'stations', collection: @stations, as: 'station' %>
   </div>
+</div>
+<div class="footer">
+  This would be a footer.
 </div>

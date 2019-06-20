@@ -1,0 +1,16 @@
+<div class="station">
+  <div class="bikes">
+    <div class="count">
+      <%= station.free_bikes %>
+    </div>
+    vélibs
+    <div class="clearbox"></div>
+  </div>
+  <div class="station-info">
+    <a class="name" href="<%= map_link(station) %>" target="_blank">
+      <h3><%= station.name %></h3><i class="la la-external-link-square"></i>
+    </a>
+    <p class="station-distance"><img src="https://img.icons8.com/color/48/000000/walking.png"> <%= walking_distance(station.distance) %> minutes</p>
+    <div class="clearbox"></div>
+  </div>
+</div>

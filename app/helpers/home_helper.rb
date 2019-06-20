@@ -26,4 +26,8 @@ module HomeHelper
     # Google says we're walking 4.8 km/h -> 1 km / 12.5 minutes
     (distance * 12.5).round(1)
   end
+
+  def map_link(station)
+    "https://www.openstreetmap.org/#map=18/#{station.latitude}/#{station.longitude}"
+  end
 end
