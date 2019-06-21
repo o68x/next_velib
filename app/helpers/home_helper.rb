@@ -35,7 +35,8 @@ module HomeHelper
     (distance * 12.5).round(1)
   end
 
+  # https://www.openstreetmap.org/#map=18/
   def map_link(station)
-    "https://www.openstreetmap.org/#map=18/#{station.latitude}/#{station.longitude}"
+    "https://www.google.com/maps/search/?api=1&query=#{station.latitude},#{station.longitude}"
   end
 end
