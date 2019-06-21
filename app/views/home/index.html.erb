@@ -18,10 +18,10 @@
     </code>
   </div>
   <div class="message<%= @location.nil? ? " show" : " hide" %>">
-    Don't know what to do with <%= @search.present? ? @search : 'nothing' %>
+    Don't know what to do with <span style="text-decoration: underline"><%= @search.present? ? @search : 'nothing' %></span>
   </div>
   <div class="stations">
-    <%= render partial: 'stations', collection: @stations, as: 'station', locals: {location: @location[:coordinates]} %>
+    <%= render partial: 'stations', collection: @stations, as: 'station', locals: {location: @location[:coordinates]} unless @location.nil? %>
   </div>
 </div>
 <div class="note">
