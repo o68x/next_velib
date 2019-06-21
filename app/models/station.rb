@@ -80,8 +80,9 @@ class Station < ApplicationRecord
         station.free_bikes = s["free_bikes"].to_i
       end
       station_data.update!(free_bikes: s["free_bikes"].to_i)
-    rescue StandardError
-      retry
+    rescue StandardError => e
+      logger.error e.to_s
+      print e
     end
   end
 
