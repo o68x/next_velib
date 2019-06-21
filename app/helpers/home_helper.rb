@@ -14,7 +14,7 @@ module HomeHelper
         lat: paris_only["geometry"]["coordinates"][1],
       }
     }
-  rescue Timeout::Error => e
+  rescue StandardError => e
     {
       label: e,
       coordinates: {
