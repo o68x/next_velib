@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 html {
   box-sizing: border-box;
+  background-image: linear-gradient(120deg, #2469A3 0%, #68B0E2 100%);
   font-family: 'B612', sans-serif;
   color: white;
 }
@@ -14,12 +15,13 @@ html {
   display: grid;
   height: calc(100vh - 20px);
   grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto auto;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   justify-items: stretch;
   align-items: stretch;
-  grid-template-areas: "header" "main" "footer";
+  margin: 0px;
+  grid-template-areas: "header" "main" "note" "footer";
 }
 
 .searchbar {
@@ -36,7 +38,6 @@ code {
 .main {
   grid-area: main;
   // background-color: #68B0E2;
-  background-image: linear-gradient(120deg, #2469A3 0%, #68B0E2 100%);
 }
 
 .station {
@@ -97,6 +98,11 @@ code {
 }
 .hide {
   display: none;
+}
+
+.note {
+  grid-area: note;
+  text-align: right;
 }
 
 .footer {
