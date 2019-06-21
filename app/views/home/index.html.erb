@@ -13,6 +13,7 @@
       <% unless @location.nil? %>
       <%= @location[:label] %>
       <%= @location[:coordinates] %>
+      <% provide(:page_title, @location[:label]) %>
       <% end %>
     </code>
   </div>
