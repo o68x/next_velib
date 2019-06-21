@@ -21,7 +21,7 @@
     Don't know what to do with <%= @search.present? ? @search : 'nothing' %>
   </div>
   <div class="stations">
-    <%= render partial: 'stations', collection: @stations, as: 'station' %>
+    <%= render partial: 'stations', collection: @stations, as: 'station', locals: {location: @location[:coordinates]} %>
   </div>
 </div>
 <div class="footer">

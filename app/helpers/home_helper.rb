@@ -36,7 +36,7 @@ module HomeHelper
   end
 
   # https://www.openstreetmap.org/#map=18/
-  def map_link(station)
-    "https://www.google.com/maps/search/?api=1&query=#{station.latitude},#{station.longitude}"
+  def map_link(location, station)
+    "https://www.google.com/maps/dir/?api=1&&origin=#{location[:lat]},#{location[:lng]}&destination=#{station.latitude},#{station.longitude}&travelmode=walking"
   end
 end
