@@ -16,6 +16,7 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@percy/agent": "^0.7.2",
     "husky": "^2.4.0",
     "webpack-dev-server": "^3.7.1"
   }
