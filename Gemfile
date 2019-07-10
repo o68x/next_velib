@@ -7,6 +7,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 File.read('./.ruby-version')
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'ahoy_matey'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'dotenv-rails', '~> 2.7.2'
 gem 'geocoder', '~> 1.5', '>= 1.5.1'
