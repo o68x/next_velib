@@ -13,8 +13,10 @@ gem 'dotenv-rails', '~> 2.7.2'
 gem 'geocoder', '~> 1.5', '>= 1.5.1'
 gem 'hiredis'
 gem 'httparty', '~> 0.17.0'
+gem 'humanize', '~> 2.3'
 gem 'jbuilder', '~> 2.5'
 gem 'pg', '>= 0.18', '< 2.0'
+gem 'public_suffix', '~> 3.1', '>= 3.1.1'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 6.0.0.rc1'
 gem 'redis-rails'
@@ -27,10 +29,12 @@ gem 'webpacker', '~> 4.0'
 
 group :development, :test do
   gem 'awesome_print'
+  gem 'debase', '~> 0.2.3'
   gem 'factory_bot_rails', '~> 4.0'
   gem 'pry-byebug', '~> 3.6'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
+  gem 'ruby-debug-ide'
 end
 
 group :development do
