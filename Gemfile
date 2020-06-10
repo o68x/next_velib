@@ -10,7 +10,7 @@ File.read('./.ruby-version')
 gem 'ahoy_matey'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'dotenv-rails', '~> 2.7.2'
-gem 'geocoder', '~> 1.5', '>= 1.5.1'
+gem 'geocoder', '~> 1.6'
 gem 'hiredis'
 gem 'httparty', '~> 0.17.0'
 gem 'humanize', '~> 2.3'
