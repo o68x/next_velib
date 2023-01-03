@@ -12,7 +12,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'dotenv-rails', '~> 2.7.2'
 gem 'geocoder', '~> 1.5', '>= 1.5.1'
 gem 'hiredis'
-gem 'httparty', '~> 0.17.0'
+gem 'httparty', '~> 0.21.0'
 gem 'humanize', '~> 2.3'
 gem 'jbuilder', '~> 2.5'
 gem 'pg', '>= 0.18', '< 2.0'
